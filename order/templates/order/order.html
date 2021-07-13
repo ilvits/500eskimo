@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+
+  <details>
+  <summary></summary>
+  <nav class="menu">
+    <a href="#link">home</a>
+    <a href="#link">order</a>
+    <a href="#link">cart</a>
+    <a href="#link">account</a>
+    <a href="#link">contact</a>
+  </nav>
+</details>
+
+	{% for icecream in icecreams %}
+  	<div class="icecream_box">
+    		<img alt="icecream" class="icecream_img" src="media/{{icecream.image}} "/>
+    		<p class="icecream_text">{{ icecream.name }}</p>
+  	- <input type="number" class="num" value="25"/> +
+    	<button class="button">добавить</button>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
