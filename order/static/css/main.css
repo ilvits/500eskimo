@@ -9,10 +9,57 @@
 
 body {
     background-color: var(--primColor);
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300; 
+    font-style: normal;
     font-weight: 300;
     font-size: 13px;
 }
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+.login_btn {
+  background-color: var(--trdColor);
+  position: fixed;
+  background-color: #FFFBF4;
+  padding: 9px;
+  margin: 10px 10px 10px 120px;
+  transition: 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--boxShadow);
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.menu_btn:checked ~ .login_btn { 
+  transform: translateX(150px);
+}
+
+
 
 .nav,
 .menu {
@@ -53,6 +100,7 @@ body {
     text-decoration: none;
     padding: 0 4px;
     color: var(--secoColor);
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
     transition: 0.3s;
@@ -147,10 +195,18 @@ body {
     background-color: #ffeede;
     border: 1px solid rgba(85, 12, 12, 0.2);
     border-radius: var(--cornerRad);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
     padding: 3px 6px;
     width: 130px;
     margin: 10px;
 }
+
+
+.button:active {
+  transform: translate3d(1px,1px,0px);
+    box-shadow: none;
+}
+
 
 input {
     background-color: #fffbf4;
@@ -218,13 +274,16 @@ input[type="number"]:focus {
     background-color: #ffeede;
     border: 1px solid rgba(85, 12, 12, 0.2);
     border-radius: var(--cornerRad);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
     font-size: 16px;
     font-weight: 600;
 }
 
 .number-minus:active {
   transform: translate3d(1px,1px,0px);
+  box-shadow: none;
 }
+
 
 .number-plus {
     position: absolute;
@@ -238,10 +297,12 @@ input[type="number"]:focus {
     background-color: #ffeede;
     border: 1px solid rgba(85, 12, 12, 0.2);
     border-radius: var(--cornerRad);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
     font-size: 16px;
     font-weight: 600;
 }
 
 .number-plus:active {
   transform: translate3d(1px,1px,0px);
+  box-shadow: none;
 }

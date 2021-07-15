@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     # my apps
     'order',
     'users',
-        
+    # Djanjo Jet (admin theme)
+    'jet.dashboard',
+    'jet',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',

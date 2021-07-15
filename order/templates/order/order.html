@@ -1,18 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="nav">
-  <input type="checkbox">
-    <span></span>
-    <span></span>
-    <span></span>
-    <div class="menu">
-      <li><a href="{% url 'order:order' %}">Заказать</a></li>
-      <li><a href="#">Корзина</a></li>
-      <li><a href="#">Контакты</a></li>
-    </div>
-</div>
-<div class="container">
+
 	{% for icecream in icecreams %}
   	<div class="icecream_box">
     		<img alt="icecream" class="icecream_img" src="media/{{icecream.image}} "/>
@@ -25,5 +14,4 @@
         <button class="button">В корзину</button>
 	</div>
 	{% endfor %}
-</div>
 {% endblock %}

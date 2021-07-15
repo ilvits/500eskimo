@@ -21,6 +21,9 @@ from django.conf import settings
 from order import views
 
 urlpatterns = [
+    url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
+
     path('admin/', admin.site.urls),
     path('order/', include('order.urls')),
     path('users/', include('users.urls')),

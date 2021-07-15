@@ -1,5 +1,10 @@
 {% load static %}
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,10 +16,26 @@
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
   </head>
   <body>
+<div class="nav">
+    <input type="checkbox" class="menu_btn">
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="menu">
+        <li><a href="{% url 'order:order' %}">Заказать</a></li>
+        <li><a href="#">Корзина</a></li>
+        <li><a href="#">Контакты</a></li>
+    </div>
+    <div class="login_btn material-icons">
+	<a href="{% url 'users:login' %}">face</a>
+    </div>
+</div>
 
+
+<div class="container">
 {% block content %}
 {% endblock %}
-
+</div>
 <!-- 
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
