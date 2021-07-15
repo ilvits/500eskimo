@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="nav">
+  <input type="checkbox">
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="menu">
+      <li><a href="{% url 'order:order' %}">Заказать</a></li>
+      <li><a href="#">Корзина</a></li>
+      <li><a href="#">Контакты</a></li>
+    </div>
+</div>
 <div class="container">
-
-  <details>
-  <summary></summary>
-  <nav class="menu">
-    <a href="#link">home</a>
-    <a href="#link">order</a>
-    <a href="#link">cart</a>
-    <a href="#link">account</a>
-    <a href="#link">contact</a>
-  </nav>
-</details>
-
 	{% for icecream in icecreams %}
   	<div class="icecream_box">
     		<img alt="icecream" class="icecream_img" src="media/{{icecream.image}} "/>
     		<p class="icecream_text">{{ icecream.name }}</p>
-  	- <input type="number" class="num" value="25"/> +
-    	<button class="button">добавить</button>
+  	<div class="number">
+            <button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">-</button>
+            <input type="number" min="0" value="0" step="25" readonly>
+            <button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">+</button>
+        </div>
+        <button class="button">В корзину</button>
 	</div>
 	{% endfor %}
 </div>

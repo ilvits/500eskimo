@@ -16,10 +16,10 @@ class Category(models.Model):
 class Icecream(models.Model):
 	"""карточка мороженого"""
 	name 		= models.CharField(max_length=200)
-	description = models.TextField(blank=False, null=True)
+	description 	= models.TextField(blank=True, null=True)
 	category	= models.ForeignKey(Category, blank=True, null=True, on_delete=models.PROTECT)
-	active		= models.BooleanField(blank=True, default=False)
-	image		= models.ImageField(upload_to='images/icecream')
+	active		= models.BooleanField(blank=True, default=True)
+	image		= models.ImageField(blank=True, upload_to='images/icecream')
 	date_added	= models.DateTimeField(auto_now_add=True)
 	price		= models.DecimalField(max_digits=5, decimal_places=0, default='2')
 

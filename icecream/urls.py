@@ -18,8 +18,12 @@ from django.urls import path
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
+from order import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('order/', include('order.urls')),
+    path('users/', include('users.urls')),
+
+    path('new_icecream/', views.new_icecream, name='new_icecream'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
