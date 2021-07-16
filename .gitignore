@@ -6,5 +6,6 @@ temp
 db.sqlite3
 /static
 .DS_Store
-/images
+/images/icecream/w
 /media
+*.sock

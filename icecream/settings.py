@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     # Djanjo Jet (admin theme)
     'jet.dashboard',
     'jet',
+    # Cторонние приложения
+    'django_cleanup.apps.CleanupConfig',
+    'bootstrap5',
     # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,8 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # CleanUp app
-    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/users/login/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

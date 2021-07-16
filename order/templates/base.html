@@ -1,4 +1,4 @@
-{% load static %}
+{% load bootstrap5 %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,32 +14,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>500 Eskimo</title>
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="preload" href="/static/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/static/css/main.css"></noscript>
   </head>
-  <body>
-<div class="nav">
-    <input type="checkbox" class="menu_btn">
-    <span></span>
-    <span></span>
-    <span></span>
-    <div class="menu">
-        <li><a href="{% url 'order:order' %}">Заказать</a></li>
-        <li><a href="#">Корзина</a></li>
-        <li><a href="#">Контакты</a></li>
-    </div>
-    <div class="login_btn material-icons">
-	<a href="{% url 'users:login' %}">face</a>
-    </div>
-</div>
+<body>
 
 
-<div class="container">
-{% block content %}
-{% endblock %}
-</div>
-<!-- 
-    <script src="../static/js/jquery.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/scripts.js"></script> -->
-  </body>
+
+
+    <!-- <div class="container">
+    <div class="navigation">
+    <div class="nav_main">
+        <input type="checkbox" class="menu_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu">
+            <li><a href="{% url 'order:order' %}">Заказать</a></li>
+            <li><a href="#">Корзина</a></li>
+            <li><a href="#">Контакты</a></li>
+        </div>
+        </div>
+        <div class="login_btn material-icons">
+            {% if user.is_authenticated %}
+                <a href="{% url 'users:logout' %}">logout</a>
+            {% else %}
+                <a href="{% url 'users:login' %}">login</a>
+                <a href="{% url 'users:register' %}">account_box</a>
+            {% endif %}
+        </div>
+    </div> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">500 Эскимо</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'index' %}">Домой</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'order:order' %}">Сделать заказ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Контакты</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link material-icons" aria-current="page" href="{% url 'users:logout' %}">logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link material-icons" aria-current="page" href="{% url 'users:login' %}">login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link material-icons" aria-current="page" href="{% url 'users:register' %}">account_box</span></a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+     <main class="main_content" role="main">
+        {% block content %}{% endblock content %}
+    </main>
+    </div>
+</body>
 </html>

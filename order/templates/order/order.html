@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
+<h2>Выберите мороженое</h2>
 	{% for icecream in icecreams %}
   	<div class="icecream_box">
     		<img alt="icecream" class="icecream_img" src="media/{{icecream.image}} "/>
@@ -14,4 +13,4 @@
         <button class="button">В корзину</button>
 	</div>
 	{% endfor %}
-{% endblock %}
+{% endblock content %}

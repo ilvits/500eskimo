@@ -1,16 +1,18 @@
 :root {
     --primColor: #F8E7D9;
     --secoColor: #9D695D;
+    --trdColor: #FFFBF4;
     --cornerRad: 4px;
     --boxShadow: 4px 5px 4px rgba(0, 0, 0, .1);
 }
 
 body {
+    background-image: url('/static/images/bg.jpg');
     background-color: var(--primColor);
     font-family: 'Roboto', sans-serif;
-    font-weight:300; 
+    font-weight: 300; 
     font-style: normal;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 a {
@@ -18,16 +20,7 @@ a {
   color: #666;
 }
 
-.login_btn {
-  background-color: var(--trdColor);
-  position: fixed;
-  background-color: #FFFBF4;
-  padding: 9px;
-  margin: 10px 10px 10px 120px;
-  transition: 0.3s;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--boxShadow);
+.material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -52,108 +45,21 @@ a {
   font-feature-settings: 'liga';
 }
 
-.menu_btn:checked ~ .login_btn { 
-  transform: translateX(150px);
-}
-
-
-
-.nav,
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav {
-    position: absolute;
-    background-color: #FFFBF4;
-    padding: 10px;
-    margin: 10px;
-    transition: 0.3s;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--boxShadow);
-}
-
-.menu {
-    margin: 0;
-    padding: 0;
-    width: 0;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.nav input:checked~.menu {
-    width: 300px;
-}
-
-.menu li {
-    list-style: none;
-    margin: 0 10px;
-}
-
-.menu li a {
-    text-decoration: none;
-    padding: 0 4px;
-    color: var(--secoColor);
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    transition: 0.3s;
-}
-
-.menu li a:hover {
-    color: #161919;
-}
-
-.nav input {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    opacity: 0;
-}
-
-.nav span {
-    position: absolute;
-    left: 12px;
-    width: 18px;
-    height: 3px;
-    border-radius: 50px;
-    background-color: #666;
-    pointer-events: none;
-    transition: 0.2s;
-}
-
-.nav input:checked~span {
-    background-color: #666;
-}
-
-.nav span:nth-child(2) {
-    transform: translateY(-8px);
-}
-
-.nav input:checked~span:nth-child(2) {
-    transform: translateY(0) rotate(-45deg);
-}
-
-.nav span:nth-child(3) {
-    transform: translateY(8px);
-}
-
-.nav input:checked~span:nth-child(3) {
-    transform: translateY(0) rotate(45deg);
-}
-
-.nav input:checked~span:nth-child(4) {
-    transform: translateX(-15px);
-    opacity: 0;
-}
-
-.container {
+/*.container {
     margin: 0 auto;
     padding-top: 70px;
     min-height: 100%;
+}*/
+
+.jumbotron {
+    padding: 2rem 1rem;
+    padding-top: 50px;
+    margin: 0 auto 2rem;
+    background-color: var(--trdColor);
+    border: 1px solid rgba(85, 12, 12, 0.2);
+    border-radius: var(--cornerRad);
+    box-shadow: var(--boxShadow);
+    width: 80%;
 }
 
 .icecream_box {
@@ -164,8 +70,8 @@ a {
     border: 1px solid rgba(85, 12, 12, 0.2);
     border-radius: 5px;
     box-shadow: var(--boxShadow);
-    width: 150px;
-    height: 280px;
+    width: 174px;
+    height: 300px;
     margin: 10px;
     padding: 10px;
 }

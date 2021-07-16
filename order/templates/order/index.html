@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="jumbotron">
+		<h1 class="display-3">Истинный вкус абсолютно натурального мороженого</h1>
+
+		<p class="lead">Хотите, чтобы Вам было вкусно, красиво и удобно?​ 
+Просто попробуйте наше мороженое или торт-мороженое ручной работы, и Вы поймете, это именно то, что Вы искали — тот самый вкус! Вам захочется ещё. И ещё.</p>
+
+		<a class="btn btn-lg btn-primary" href="{% url 'order:order' %}" 
+		role='button'>Заказать мороженое</a>
+	</div>
+{% endblock content %}
