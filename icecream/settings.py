@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['45.148.30.212', 'ilvits.com', 'www.ilvits.com', 'ilvitswebsit.
 
 INSTALLED_APPS = [
     # my apps
-    'order',
+    'shop',
     'users',
     # Djanjo Jet (admin theme)
     'jet.dashboard',
@@ -135,12 +135,12 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 LOGIN_URL = '/users/login/'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/3.2/ref/settings/
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'

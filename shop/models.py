@@ -16,7 +16,7 @@ class Category(models.Model):
 class Icecream(models.Model):
 	"""карточка мороженого"""
 	name 		= models.CharField(max_length=200)
-	description 	= models.TextField(blank=True, null=True)
+	description = models.TextField(blank=True, null=True)
 	category	= models.ForeignKey(Category, blank=True, null=True, on_delete=models.PROTECT)
 	active		= models.BooleanField(blank=True, default=True)
 	image		= models.ImageField(blank=True, upload_to='images/icecream')

@@ -5,13 +5,13 @@ from .forms import IcecreamForm
 
 
 def index(request):
-	return render(request, 'order/index.html')
+	return render(request, 'shop/index.html')
 	
 
-def order(request):
+def shop(request):
 	icecreams = Icecream.objects.order_by('name')
 	context = {'icecreams' : icecreams}
-	return render(request, 'order/order.html', context)
+	return render(request, 'shop/catalog.html', context)
 
 @login_required
 def new_icecream(request):
@@ -24,7 +24,7 @@ def new_icecream(request):
 		form = IcecreamForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return redirect('order:order')
+			return redirect('shop:catalog')
 	# Вывести пустую или недейсвительную форму.
 	context = {'form': form}
-	return render(request, 'order/new_icecream.html', context)
+	return render(request, 'shop/new_icecream.html', context)
